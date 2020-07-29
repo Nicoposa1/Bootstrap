@@ -8,11 +8,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Hello, world!</title>
+    <title>Platzi conf</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="57">
   <!--Header-->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="assets/images/platzi-logo.png" alt="Platzi Logo">
@@ -22,22 +22,22 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">La conferencia</a>
+            <li class="nav-item ">
+              <a class="nav-link" href="#main">La conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los oradores</a>
+              <a class="nav-link" href="#speakers">Los oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lugar y fecha</a>
+              <a class="nav-link" href="#place-time">Lugar y fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviertete en orador</a>
+              <a class="nav-link" href="#conviertete-en-orador">Conviertete en orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-platzi" href="#">Comprar tickets</a>
+              <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#modalCompra" >Comprar tickets</a>
             </li>
           </ul>
         </div>
@@ -72,7 +72,7 @@
                   que tenemos para ti. Te esperamos !
                   </p>
                   <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-                  <button type="button" class=" btn btn-platzi">Comprar Tickets</button>
+                  <button type="button" class=" btn btn-platzi" data-toggle="modal" data-target="#modalCompra">Comprar Tickets</button>
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@
               <div class="card-body">
                 <h5 class="card- tittle mb-0">Christian Van Der H.</h5>
                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa unde, impedit obcaecati debitis soluta mollitia illum! Eaque consectetur voluptate vero, magni placeat incidunt exercitationem nemo tempora accusantium optio? Aliquam, architecto!</p>
-                <span class="badge badge-primary">Start Up</span>
+                <span class="badge badge-primary"><abbr data-toggle="tooltip" title="Empresa pivotante de alto crecimiento">Start up</abbr></span>
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="row">
         <div class="col text-center">
-          Anótate como orador para dar una charlo ignite.
+          Anótate como orador para dar una <abbr data-toggle="tooltip" title="Charlas de 5 minutos">charla ignite</abbr>.
           Cuéntanos de qué quieres hablar!
         </div>
       </div>
@@ -227,10 +227,63 @@
       </div>
     </footer>
   <!--/Footer-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Comprar tickets</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form row">
+              <div class="form-group col">
+                <form>
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Apellido">
+                    </div>
+                  </div>
+                </form>
+                <select class="form-control form-group mt-4">
+                  <option>Cantidad de tickets</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox"class="custom-control-input" id="customCheck1">
+                      <label class="custom-control-label"for="customCheck1">Acepto los terminos y condiciones</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-platzi">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Mdal-->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>
